@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  db:
+      image: mysql:5.7.30 
+      container_name: mysql
+      ports:
+        - "3306:3306"
+      restart: always
+      volumes:
+        - db:/var/lib/mysql
+      environment:
+        - MYSQL_ROOT_PASSWORD=ingimar
+      env_file:
+        - ./.db.env
+volumes:
+  db:
