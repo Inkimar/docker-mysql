@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  mysql:
+    image: mysql:8
+    container_name: mysql
+    ports:
+      - 3306:3306
+    volumes:
+      - dbmysql8:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=S3cret
+    env_file:
+      - ./.db.env
+
+volumes:
+  dbmysql8:
