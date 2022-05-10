@@ -8,6 +8,12 @@
 1. docker volume rm docker-mysql_dbmysql8 
 
 ## Map in SQL-files
+- Addt this directory to your host-system - `sql-script` 
+- AND add that  directory to the volumes in the docker-compose.yml-file
+- `- ./sql-script:/docker-entrypoint-initdb.d`
+- put your sql-scripts in the `sql-script`-directory
+
+**docker-compose.yml-file**
 
 ```
 version: '3.7'
