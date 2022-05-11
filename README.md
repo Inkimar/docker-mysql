@@ -13,6 +13,22 @@
 - `- ./sql-script:/docker-entrypoint-initdb.d`
 - put your sql-scripts in the `sql-script`-directory
 
+## ability to change the logs from mysql 
+- https://geshan.com.np/blog/2022/02/mysql-docker-compose/ - using docker-compose version 3.8
+- see -> he cap_add set to SYS_NICE suppresses some not useful error messages. 
+
+```
+version: '3.8'
+services:
+  db:
+    image: mysql:8.0
+    cap_add:
+      - SYS_NICE
+```
+
+
+# The docker-compose.yml-file
+
 **docker-compose.yml-file**
 
 ```
